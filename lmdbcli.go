@@ -62,7 +62,7 @@ func main() {
 
 	size := int64(*sizeFlag)
 	var dbName string
-	if *noSubdirFlag {
+	if !*noSubdirFlag {
 		dbName = "data.mdb"
 	}
 	if stat, err := os.Stat(path.Join(*pathFlag, dbName)); err != nil {
