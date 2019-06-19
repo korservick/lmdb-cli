@@ -16,12 +16,13 @@ import (
 )
 
 var (
-	pathFlag    = flag.String("db", "", "Relative path to lmdb file")
-	sizeFlag    = flag.Int("size", 32*1024*1024, "size in bytes to allocate for new database")
-	growthFlag  = flag.Float64("growth", 1, "factor to grow/shrink an existing database")
-	roFlag      = flag.Bool("ro", false, "open the database in read-only mode")
-	dbsFlag     = flag.Int("dbs", 0, "number of additional databases to allow")
-	commandFlag = flag.String("c", "", "command to run")
+	pathFlag     = flag.String("db", "", "Relative path to lmdb file (folder)")
+	noSubdirFlag  = flag.Bool("no-subdir", false, "Direct name the database in db folder path")
+	sizeFlag     = flag.Int("size", 32*1024*1024, "size in bytes to allocate for new database")
+	growthFlag   = flag.Float64("growth", 1, "factor to grow/shrink an existing database")
+	roFlag       = flag.Bool("ro", false, "open the database in read-only mode")
+	dbsFlag      = flag.Int("dbs", 0, "number of additional databases to allow")
+	commandFlag  = flag.String("c", "", "command to run")
 
 	cmds = make(map[string]Command)
 
