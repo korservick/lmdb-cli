@@ -6,9 +6,9 @@ import (
 	"path"
 	"testing"
 
-	"github.com/2nd/lmdb-cli/core"
 	"github.com/bmatsuo/lmdb-go/lmdb"
 	. "github.com/karlseguin/expect"
+	"github.com/korservick/lmdb-cli/core"
 )
 
 type IntegrationTests struct {
