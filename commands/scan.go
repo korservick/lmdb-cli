@@ -1,6 +1,6 @@
 package commands
 
-import "github.com/2nd/lmdb-cli/core"
+import "github.com/korservick/lmdb-cli/core"
 
 type Scan struct {
 }

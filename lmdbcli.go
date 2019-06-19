@@ -11,13 +11,13 @@ import (
 
 	"github.com/peterh/liner"
 
-	"github.com/2nd/lmdb-cli/commands"
-	"github.com/2nd/lmdb-cli/core"
+	"github.com/korservick/lmdb-cli/commands"
+	"github.com/korservick/lmdb-cli/core"
 )
 
 var (
 	pathFlag     = flag.String("db", "", "Relative path to lmdb file (folder)")
-	noSubdirFlag  = flag.Bool("no-subdir", false, "Direct name the database in db folder path")
+	noSubdirFlag = flag.Bool("no-subdir", false, "Direct name to database in db folder path")
 	sizeFlag     = flag.Int("size", 32*1024*1024, "size in bytes to allocate for new database")
 	growthFlag   = flag.Float64("growth", 1, "factor to grow/shrink an existing database")
 	roFlag       = flag.Bool("ro", false, "open the database in read-only mode")
@@ -73,7 +73,7 @@ func main() {
 	}
 	runOne := len(*commandFlag) != 0
 
-	context := core.NewContext(*pathFlag, size, *roFlag, *dbsFlag, os.Stdout)
+	context := core.NewContext(*pathFlag, *noSubdirFlag, size, *roFlag, *dbsFlag, os.Stdout)
 	defer context.Close()
 	if err := context.SwitchDB(""); err != nil {
 		log.Fatal("could not select default database: ", err)

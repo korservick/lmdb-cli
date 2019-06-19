@@ -3,8 +3,8 @@ package commands
 import (
 	"errors"
 
-	"github.com/2nd/lmdb-cli/core"
 	"github.com/bmatsuo/lmdb-go/lmdb"
+	"github.com/korservick/lmdb-cli/core"
 )
 
 var (
