@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
+	"fmt"
 
 	"github.com/bmatsuo/lmdb-go/lmdb"
 	"github.com/korservick/lmdb-cli/core"
@@ -42,6 +43,7 @@ func (cmd Get) Execute(context *core.Context, input []byte) (err error) {
 		}
 		value = prettyData.Bytes()
 	}
+	fmt.Println(len(value), value)
 	context.Output(value)
 	return nil
 }
