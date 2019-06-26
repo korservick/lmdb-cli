@@ -14,11 +14,13 @@ func (cmd Stats) Execute(context *core.Context, input []byte) (err error) {
 	if err != nil {
 		return err
 	}
+	maxKeySize := context.MaxKeySize()
 	stats, err := context.Stat()
 	if err != nil {
 		return err
 	}
 	context.Output(labelInt("map size", info.MapSize))
+	context.Output(labelInt("max key size", int64(maxKeySize)))
 	if readable := readableBytes(info.MapSize); len(readable) != 0 {
 		context.Output(labelString("map size (human)", readable))
 	}
