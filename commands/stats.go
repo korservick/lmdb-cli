@@ -1,6 +1,6 @@
 package commands
 
-import "github.com/korservick/lmdb-cli/core"
+import "lmdb-cli/core"
 
 type Stats struct {
 }

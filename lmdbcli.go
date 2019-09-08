@@ -11,8 +11,8 @@ import (
 
 	"github.com/peterh/liner"
 
-	"github.com/korservick/lmdb-cli/commands"
-	"github.com/korservick/lmdb-cli/core"
+	"lmdb-cli/commands"
+	"lmdb-cli/core"
 )
 
 var (

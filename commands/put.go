@@ -2,7 +2,7 @@ package commands
 
 import (
 	"github.com/bmatsuo/lmdb-go/lmdb"
-	"github.com/korservick/lmdb-cli/core"
+	"lmdb-cli/core"
 )
 
 type Put struct {

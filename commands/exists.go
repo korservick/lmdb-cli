@@ -1,8 +1,9 @@
 package commands
 
 import (
+	"lmdb-cli/core"
+
 	"github.com/bmatsuo/lmdb-go/lmdb"
-	"github.com/korservick/lmdb-cli/core"
 )
 
 type Exists struct {

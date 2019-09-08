@@ -6,9 +6,10 @@ import (
 	"path"
 	"testing"
 
+	"lmdb-cli/core"
+
 	"github.com/bmatsuo/lmdb-go/lmdb"
 	. "github.com/karlseguin/expect"
-	"github.com/korservick/lmdb-cli/core"
 )
 
 type IntegrationTests struct {
@@ -123,7 +124,7 @@ func NewTestContext() (*core.Context, *Recorder) {
 		panic(err)
 	}
 	recorder := NewRecorder()
-	c := core.NewContext(dbPath, 4194304, false, 1, recorder)
+	c := core.NewContext(dbPath, false, 4194304, false, 1, recorder)
 	if err := c.SwitchDB(""); err != nil {
 		c.Close()
 		panic(err)
